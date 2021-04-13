@@ -31,11 +31,10 @@ const Icon = () => {
     >
       <path
         fillRule="evenodd"
-        d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"
+        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
       />
       <path
-        fillRule="evenodd"
-        d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z"
+        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
       />
     </svg>
   );
@@ -60,7 +59,7 @@ const IconRight = () => {
 };
 
 const GradientsHeader = (props) => {
-  const { children } = props;
+  const { children, darkMode, setDarkMode } = props;
 
   const [gradientIndex, setGradientIndex] = React.useState(
     Math.floor(Math.random() * gradients.length)
@@ -117,6 +116,7 @@ const GradientsHeader = (props) => {
       >
         <IconRight />
       </button>
+      <button type="button" className="btn btn-outline-light m-1" aria-label="Toggle dark mode" onClick={() => setDarkMode(!darkMode)}>Dark Mode</button>
     </header>
   );
 };
